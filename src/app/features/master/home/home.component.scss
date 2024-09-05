@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #771319;
+    height: 4rem;
+    padding: 0 20px;
+    position: relative;
+    color: whitesmoke;
+    font-weight: 600;
+  }
+  
+  .logo {
+    height: 3rem;
+  }
+
+  .main-nav {
+    display: flex;
+    align-self: flex-end;
+  }
+
+  
+  .main-nav-list {
+    height: 2rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.8rem;
+    color: whitesmoke;
+    font-weight: 500;
+    li {
+        a {
+            text-decoration: none !important;
+            color: inherit;
+            cursor: pointer;
+        }
+        .nav-cta {
+            color: #771319;
+            background-color: whitesmoke;
+            border: 1px solid #c8133a;
+            border-radius: 10px;
+            padding: 3px 14px;
+        }
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+    font-family: cambria;
+  }
+
+  .mainframe {
+    width: 100%;
+    height: 60vh;
+    background-image: url(../../../../assets/marc-babin-ecGZWPOvya0-unsplash.jpg);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    position: relative
+  }
+
+  .highlights {
+    height: 400px;
+    background-color: #ededed;
+    align-self: center;
+    ul {
+        display: flex;
+        width: 90%;
+        margin: 0% 5%;
+        list-style: none;
+        li {
+            margin-top: 30px;
+        }
+    }
+  }
+
+  .when_where {
+    background-color: #c9dad4;
+    height: 400px;
+    align-self: center;
+    p::first-letter {
+      font-size: 200%;
+    }
+    ul {
+      display: flex;
+      width: 90%;
+      margin: 0% 3%;
+      list-style: none;
+      li {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .social {
+    background-image: url(../../../../assets/abc.jpeg);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 340px;
+  }
