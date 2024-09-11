@@ -3,7 +3,7 @@
         <div class="page-header-title">
             <div class="d-block">
                 <h5 class="mb-0">
-                    Almost Done !
+                    Quick Booking!<img style="height: 35px; margin: 0px 10px;" src="../../../../assets/almost.png"/>
                 </h5>
             </div>
         </div>
@@ -19,6 +19,7 @@
                     <div class="card-body">
                         <div class="row">
                             <mat-form-field class="col-12">
+                                <mat-label>Event Type</mat-label>
                                 <input type="text" matInput placeholder="Event Type" formControlName="name" trim="blur"
                                     maxlength="100" autocomplete="off" required />
                                 <mat-error> <a style="color:black; margin-left: 5px;">Provide Details</a></mat-error>
@@ -29,7 +30,7 @@
             </form>
             <footer style="margin-top: 20px;" class="mat-stepper-footer ng-star-inserted">
                 <button mat-raised-button color="primary" type="submit"
-                    [disabled]="!bookYourEventForm.valid">Raise Your Query
+                    [disabled]="!bookYourEventForm.valid">Raise Your Query <img style="height: 25px; margin-left: 10px;" src="../../../../assets/done.png"/>
                 </button>
                 <button mat-stroked-button class="ml-1" color="primary" [routerLink]="['/']">
                     Cancel
