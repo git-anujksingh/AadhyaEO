@@ -17,31 +17,37 @@
     justify-content: space-between;
     align-items: center;
     background-color: #771319;
-    // padding: 10px 20px;
   }
 
   header ul {
-    list-style: none;
-    display: flex;
-    margin-bottom: 0px;
-  }
-
-  header ul.right_nav {
-    padding: 0;
+    list-style-type: none;
     margin: 0;
-    li {
-      padding: 16px 40px;
-    }
+    padding: 0;
+    overflow: hidden;
   }
 
-  header ul li {
-    padding: 15px 10px;
+  header ul.right-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
   }
   
-  header ul li:hover {
-    background-color: black
+  header ul li {
+    float: left;
   }
-
+  
+  header ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  header ul li a:hover {
+    background-color: #111;
+  }
 
  .active {
     background-color: grey;
@@ -58,4 +64,9 @@
     font-family: cambria;
   }
 
- 
+  @media only screen and (max-width: 768px) {
+    header ul li a {
+      font-size: 10px;
+      padding: 6px 4px;
+    }
+  }
