@@ -18,11 +18,34 @@
                 <div class="card mat-elevation-z3 border-0 my-3">
                     <div class="card-body">
                         <div class="row">
-                            <mat-form-field class="col-12">
+                            <mat-form-field>
                                 <mat-label>Event Type</mat-label>
-                                <input type="text" matInput placeholder="Event Type" formControlName="name" trim="blur"
+                                <mat-select formControlName="eventType">
+                                  <mat-option value='birthday_party'>Birthday Party</mat-option>
+                                  <mat-option value="weeding_event">Weeding Event</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field>
+                                <mat-label>Event Stage</mat-label>
+                                <mat-select formControlName="eventStage">
+                                  <mat-option value='restaurant'>Restaurant</mat-option>
+                                  <mat-option value="banquet_hall">Banquet Hall</mat-option>
+                                  <mat-option value="rooftop">Rooftop (Open Terrace)</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>No of Attendee(s)</mat-label>
+                                <input type="text" matInput placeholder="Attendee(s) Count" formControlName="attendees" trim="blur"
                                     maxlength="100" autocomplete="off" required />
-                                <mat-error> <a style="color:black; margin-left: 5px;">Provide Details</a></mat-error>
+                            </mat-form-field>
+                            <section class="example-section">
+                                <mat-label>Catering *</mat-label>
+                                <mat-checkbox formControlName="catering" class="example-margin" [(ngModel)]="cateringValue"></mat-checkbox>
+                            </section>
+                            <mat-form-field>
+                                <mat-label>Event Description</mat-label>
+                                <input type="text" matInput placeholder="provide Description..." formControlName="eventDescription" trim="blur"
+                                    maxlength="100" autocomplete="off" />
                             </mat-form-field>
                         </div>
                     </div>
@@ -30,7 +53,7 @@
             </form>
             <footer style="margin-top: 20px;" class="mat-stepper-footer ng-star-inserted">
                 <button mat-raised-button color="primary" type="submit"
-                    [disabled]="!bookYourEventForm.valid">Raise Your Query <img style="height: 25px; margin-left: 10px;" src="../../../../assets/done.png"/>
+                    [disabled]="!bookYourEventForm.valid" (click)="submitResponse(bookYourEventForm)">Raise Your Query <img style="height: 25px; margin-left: 10px;" src="../../../../assets/done.png"/>
                 </button>
                 <button mat-stroked-button class="ml-1" color="primary" [routerLink]="['/']">
                     Cancel
