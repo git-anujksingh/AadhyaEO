@@ -104,3 +104,9 @@
     position: relative;
     height: 340px;
   }
+
+  @media only screen and (max-width: 768px) {
+    #main {
+      font-size: 11px;
+    }
+  }
