@@ -1,0 +1,22 @@
+.ec2{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: right;
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .mat-form-field {
+        min-width: 100% !important;
+    }
+
+    .page-header-editor {
+        display: flex !important;
+    }
+}
+
+mat-radio-group {
+    position: static;
+    margin-top: 20px;
+}

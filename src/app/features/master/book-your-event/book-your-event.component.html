@@ -1,1 +1,40 @@
-<p>In Progress!, Will Back Soon !!</p>
+<section *ngIf="bookYourEventForm" class="container px-2">
+    <div class="page-header-editor">
+        <div class="page-header-title">
+            <div class="d-block">
+                <h5 class="mb-0">
+                    Almost Done !
+                </h5>
+            </div>
+        </div>
+        <button type="button" mat-icon-button [routerLink]="['/']">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <div style="height: 80vh;" class="card mat-elevation-z3 border-0 mt-3">
+        <div class="card-body">
+            <form [formGroup]="bookYourEventForm">
+                <div class="card mat-elevation-z3 border-0 my-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <mat-form-field class="col-12">
+                                <input type="text" matInput placeholder="Event Type" formControlName="name" trim="blur"
+                                    maxlength="100" autocomplete="off" required />
+                                <mat-error> <a style="color:black; margin-left: 5px;">Provide Details</a></mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <footer style="margin-top: 20px;" class="mat-stepper-footer ng-star-inserted">
+                <button mat-raised-button color="primary" type="submit"
+                    [disabled]="!bookYourEventForm.valid">Raise Your Query
+                </button>
+                <button mat-stroked-button class="ml-1" color="primary" [routerLink]="['/']">
+                    Cancel
+                </button>
+            </footer>
+        </div>
+    </div>
+</section>

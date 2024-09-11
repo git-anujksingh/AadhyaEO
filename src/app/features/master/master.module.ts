@@ -7,6 +7,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { JoinUsComponent } from './join-us/join-us.component';
 import { OurWorkComponent } from './our-work/our-work.component';
 import { HomeComponent } from './home/home.component';
+import { CommonModuleModule } from '../../common/common-module/common-module.module';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule,
+    CommonModuleModule,
     MasterRoutingModule
   ]
 })
