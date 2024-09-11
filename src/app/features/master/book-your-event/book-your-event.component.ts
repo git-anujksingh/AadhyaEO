@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BookYourEventComponent {
   bookYourEventForm!: FormGroup<any>;
-  abc : any;
+  cateringValue : boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -20,7 +20,10 @@ export class BookYourEventComponent {
   ngOnInit() {
     let value : BookYourEvent = {
       uid : '0',
-      name : 'Birthday Party'
+      eventType : '',
+      attendees : 10,
+      eventStage : '',
+      catering : true
     }
     this.buildBookYourEvent(value);
   }
@@ -28,7 +31,11 @@ export class BookYourEventComponent {
   buildBookYourEvent(bookYourEvent: BookYourEvent) {
     this.bookYourEventForm = this.fb.group({
       uid: [bookYourEvent.uid],
-      name: [bookYourEvent.name,[Validators.required, Validators.maxLength(100)]],
+      eventType: [bookYourEvent.eventType,[Validators.required]],
+      attendees: [bookYourEvent.attendees,[Validators.required, Validators.maxLength(3), Validators.min(10)]],
+      eventStage: [bookYourEvent.eventStage,[Validators.required]],
+      catering: [bookYourEvent.catering],
+      eventDescription: [bookYourEvent.eventDescription]
     });
   }
 
@@ -40,8 +47,16 @@ export class BookYourEventComponent {
   extractBranchTypes(): BookYourEvent {
     const bookYourEvent: BookYourEvent = {
       uid: this.bookYourEventForm.value.uid,
-      name: this.bookYourEventForm.value.name
+      eventType: this.bookYourEventForm.value.eventType,
+      attendees: this.bookYourEventForm.value.attendees,
+      eventStage: this.bookYourEventForm.value.eventStage,
+      catering: this.bookYourEventForm.value.catering
     };
     return bookYourEvent;
+  }
+
+  submitResponse(responseValue: any){
+    let response = responseValue.value;
+    window.alert("Our Team Will Contact You Shortly !")
   }
 }

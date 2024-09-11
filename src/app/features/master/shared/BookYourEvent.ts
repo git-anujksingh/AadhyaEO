@@ -1,8 +1,10 @@
 export class BookYourEvent {
     uid?: string;
-    name?: string;
-    referenceId?: string;
-    status?: Status.Active;
+    eventType?: string;
+    attendees?: number;
+    eventStage?: string;
+    catering?: boolean;
+    eventDescription? : string;
     createdDate?: Date;
   }
   
