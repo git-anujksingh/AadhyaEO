@@ -9,7 +9,30 @@ import { Router } from '@angular/router';
 export class AppComponent {
   constructor(private router: Router){}
 
-  navigate(){
-    this.router.navigate(['/e&o/book_your_event']);
+  navigate(nav: string){
+    switch (nav) {
+      case 'home': {
+        this.router.navigate(['/e&o/home']);
+        break;
+      }
+      case 'our_work': {
+        this.router.navigate(['/e&o/work']);
+        break;
+      }
+      case 'contact': {
+        this.router.navigate(['/e&o/contact']);
+        break;
+      }
+      case 'join': {
+        this.router.navigate(['/e&o/join']);
+        break;
+      }
+      case 'book_event': {
+        this.router.navigate(['/e&o/book_event']);
+        break;
+      }
+      default:
+        break;
+    }
   }
 }
