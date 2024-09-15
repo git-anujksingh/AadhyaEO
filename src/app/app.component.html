@@ -8,11 +8,15 @@
       </ul>
 
       <ul class="right_nav">
-        <li [routerLink]="['/e&o/home']" [routerLinkActive]="['active']"><a>Home</a></li>
-        <li><a>Our Work</a></li>
-        <li><a>Contact</a></li>
-        <li><a>Join us</a></li>
-        <li (click)="navigate()" [routerLink]="['/e&o/book_your_event']" [routerLinkActive]="['active']"><a
+        <li (click)="navigate('home')" [routerLink]="['/e&o/home']" [routerLinkActive]="['active']"><a
+          class="nav-cta">Home</a></li>
+        <li (click)="navigate('our_work')" [routerLink]="['/e&o/work']" [routerLinkActive]="['active']"><a
+          class="nav-cta">Our Work</a></li>
+        <li (click)="navigate('contact')" [routerLink]="['/e&o/contact']" [routerLinkActive]="['active']"><a
+          class="nav-cta">Contact</a></li>
+        <li (click)="navigate('join')" [routerLink]="['/e&o/join']" [routerLinkActive]="['active']"><a
+          class="nav-cta">Join Us</a></li>
+        <li (click)="navigate('book_event')" [routerLink]="['/e&o/book_your_event']" [routerLinkActive]="['active']"><a
             class="nav-cta">Book Your Event</a></li>
       </ul>
     </header>
