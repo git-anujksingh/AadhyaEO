@@ -20,10 +20,13 @@ export class BookYourEventComponent {
   ngOnInit() {
     let value : BookYourEvent = {
       uid : '0',
+      hostName : '',
+      contact : undefined,
       eventType : '',
       attendees : 10,
       eventStage : '',
-      catering : true
+      catering : true,
+      email : ''
     }
     this.buildBookYourEvent(value);
   }
@@ -31,11 +34,14 @@ export class BookYourEventComponent {
   buildBookYourEvent(bookYourEvent: BookYourEvent) {
     this.bookYourEventForm = this.fb.group({
       uid: [bookYourEvent.uid],
+      hostName: [bookYourEvent.hostName, [Validators.required]],
+      contact: [bookYourEvent.contact, [Validators.required]],
       eventType: [bookYourEvent.eventType,[Validators.required]],
       attendees: [bookYourEvent.attendees,[Validators.required, Validators.maxLength(3), Validators.min(10)]],
       eventStage: [bookYourEvent.eventStage,[Validators.required]],
       catering: [bookYourEvent.catering],
-      eventDescription: [bookYourEvent.eventDescription]
+      eventDescription: [bookYourEvent.eventDescription],
+      email: [bookYourEvent.email, [Validators.email]]
     });
   }
 
@@ -43,17 +49,6 @@ export class BookYourEventComponent {
     return this.bookYourEventForm.controls;
   }
 
-
-  extractBranchTypes(): BookYourEvent {
-    const bookYourEvent: BookYourEvent = {
-      uid: this.bookYourEventForm.value.uid,
-      eventType: this.bookYourEventForm.value.eventType,
-      attendees: this.bookYourEventForm.value.attendees,
-      eventStage: this.bookYourEventForm.value.eventStage,
-      catering: this.bookYourEventForm.value.catering
-    };
-    return bookYourEvent;
-  }
 
   submitResponse(responseValue: any){
     let response = responseValue.value;

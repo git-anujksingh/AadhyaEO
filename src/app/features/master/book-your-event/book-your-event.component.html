@@ -12,12 +12,22 @@
         </button>
     </div>
 
-    <div style="height: 80vh;" class="card mat-elevation-z3 border-0 mt-3">
+    <div style="margin-bottom: 40px;" class="card mat-elevation-z3 border-0 mt-3">
         <div class="card-body">
             <form [formGroup]="bookYourEventForm">
                 <div class="card mat-elevation-z3 border-0 my-3">
                     <div class="card-body">
                         <div class="row">
+                            <mat-form-field class="col-12">
+                                <mat-label>Host Name(Organizer's Name)</mat-label>
+                                <input type="text" matInput placeholder="Host Name" formControlName="hostName" trim="blur"
+                                    maxlength="40" autocomplete="off" required />
+                            </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>Contact No.</mat-label>
+                                <input type="text" matInput placeholder="Contact No." formControlName="contact" trim="blur"
+                                    maxlength="10" autocomplete="off" required />
+                            </mat-form-field>
                             <mat-form-field>
                                 <mat-label>Event Type</mat-label>
                                 <mat-select formControlName="eventType">
@@ -49,6 +59,12 @@
                                 <input type="text" matInput placeholder="provide Description..." formControlName="eventDescription" trim="blur"
                                     maxlength="100" autocomplete="off" />
                             </mat-form-field>
+                            <mat-form-field class="col-12">
+                                <mat-label>Email ID (If Any)</mat-label>
+                                <input type="text" matInput placeholder="Email ID" formControlName="email" trim="blur"
+                                    maxlength="50" autocomplete="off" />
+                            </mat-form-field>
+                            <a style="color: red; font-family: 'cambria'; text-align: right; font-size: 10px; margin-top:-22px">* Please Provide (if Possible) for smooth Communication</a>
                         </div>
                     </div>
                 </div>

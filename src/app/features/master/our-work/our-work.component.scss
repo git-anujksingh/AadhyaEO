@@ -1,0 +1,75 @@
+/* Style for the background image section */
+.image-background {
+    height: 80vh; /* Viewport height to take the full screen height */
+    background-image: url('../../../../assets/our_work.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style for the content that scrolls */
+.content {
+    padding: 20px;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.birthday_party {
+    margin-top: 100px;
+    align-items: center;
+    ul {
+        width: 80%;
+        margin-top: 50px;
+        list-style: none;
+        margin-left: auto;
+        margin-right: auto;
+        li {
+            border: 1px solid black;
+            border-radius: 8px;
+            display: inline-block;
+            width: 28%;
+            height: 450px;
+            margin: 2%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+.image-background {
+    height: 50vh;
+}
+
+    .birthday_party {
+        margin-top: 50px;
+        align-items: center;
+        ul {
+            width: 100%;
+            margin-top: 20px;
+            list-style: none;
+            margin-left: auto;
+            margin-right: auto;
+            li {
+                border: 1px solid black;
+                border-radius: 8px;
+                display: inline-block;
+                width: 28%;
+                height: 250px;
+                margin: 2%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
